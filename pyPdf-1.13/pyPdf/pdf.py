@@ -1386,6 +1386,7 @@ class PageObject(DictionaryObject):
             if operator == "Tj":
                 _text = operands[0]
                 if isinstance(_text, TextStringObject):
+                    text += "\n" #here
                     text += _text
             elif operator == "T*":
                 text += "\n"
@@ -1393,6 +1394,7 @@ class PageObject(DictionaryObject):
                 text += "\n"
                 _text = operands[0]
                 if isinstance(_text, TextStringObject):
+                    text += "\n" #here
                     text += operands[0]
             elif operator == '"':
                 _text = operands[2]
@@ -1402,6 +1404,7 @@ class PageObject(DictionaryObject):
             elif operator == "TJ":
                 for i in operands[0]:
                     if isinstance(i, TextStringObject):
+                        text += "\n" #here
                         text += i
         return text
 

@@ -44,7 +44,7 @@ class Debater(object):
 
 class Packet(object):
 	def __init__(self, results_pdf):
-		self.results_pdf = PdfFileReader(file(results_pdf, "rb"))
+		self.results_pdf = PdfFileReader(open(results_pdf, "rb"))
 		self.num_pages = self.results_pdf.getNumPages()
 		self.result_list = self.result_string.split('\n')
 		self.entry_start = 0
